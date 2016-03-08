@@ -1,5 +1,3 @@
-#chisel takes in a markdown file as input
-#chisel outputs an html file
 require 'pry'
 require_relative 'file_reader'
 require_relative 'conversions'
@@ -16,5 +14,5 @@ class Chisel
   end
 end
 
-# c = Chisel.new
-# c.output_to_file(Conversions.new.altered_contents)
+c = Chisel.new
+c.output_to_file(Conversions.new.altered_contents)

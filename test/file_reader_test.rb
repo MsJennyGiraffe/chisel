@@ -8,7 +8,8 @@ class FileReaderTest < Minitest::Test
   end
 
   # def test_read_input_file_can_take_ARGV0
-  #   assert_equal "filepath", ARGV[0]
+  #   @chisel.read_from_file
+  #   assert_equal "hello", ARGV[0]
   # end
 
   # def test_read_input_file_can_extract_contents
@@ -20,10 +21,10 @@ class FileReaderTest < Minitest::Test
   #   assert_equal "filepath", ARGV[1]
   # end
 
-  # def test_outputting_to_a_file_outputs_content_to_a_file
-  #   @chisel.outputting_to_file
-  #   assert_equal String, outputting.close
-  # end
-
+  def test_outputting_to_a_file_writes_to_a_given_file
+    @chisel.output_to_file("This really works!")
+    file = File.open("test_contents_output.html")
+    assert_equal "This really works!", file.readlines[0]
+  end
 
 end
